@@ -5010,7 +5010,7 @@ resolve@1.5.0:
   dependencies:
     path-parse "^1.0.5"
 
-resolve@^1.1.6, resolve@^1.3.0, resolve@^1.3.3, resolve@^1.4.0, resolve@^1.5.0:
+resolve@^1.1.6, resolve@^1.3.0, resolve@^1.3.3, resolve@^1.4.0, resolve@^1.5.0, resolve@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
   dependencies:
