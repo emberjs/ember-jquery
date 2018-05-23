@@ -4,10 +4,7 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
-    vendorFiles: {
-      // opt out via vendorFiles to ensure no jquery doubling occurs
-      'jquery.js': null
-    }
+    // Add options here
   });
 
   /*
