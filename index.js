@@ -6,7 +6,11 @@ module.exports = {
     this._super.included.apply(this, arguments);
     let app = this._findHost();
     let optionalFeatures = app.project.findAddonByName("@ember/optional-features");
-    app.import('vendor/jquery/jquery.js', { prepend: true });
+
+    if (!app.vendorFiles || !app.vendorFiles['jquery.js']) {
+      app.import('vendor/jquery/jquery.js', { prepend: true });
+    }
+
     if (optionalFeatures && optionalFeatures.isFeatureEnabled('jquery-integration')) {
       app.project.ui.writeDeprecateLine('You have disabled the `jquery-integration` optional feature. You now have to delete `@ember/jquery` from your package.json');
     }
