@@ -20,8 +20,10 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "broccoli-funnel": "^2.0.1",
     "ember-cli-babel": "^6.6.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "resolve": "^1.7.1"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
