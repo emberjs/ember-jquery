@@ -11,7 +11,7 @@ module.exports = {
       app.import('vendor/jquery/jquery.js', { prepend: true });
     }
 
-    if (optionalFeatures && optionalFeatures.isFeatureEnabled('jquery-integration')) {
+    if (optionalFeatures && !optionalFeatures.isFeatureEnabled('jquery-integration')) {
       app.project.ui.writeDeprecateLine('You have disabled the `jquery-integration` optional feature. You now have to delete `@ember/jquery` from your package.json');
     }
   },
