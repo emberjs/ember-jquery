@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: '@ember/jquery',
+  name: require('./package').name,
   included() {
     this._super.included.apply(this, arguments);
     let app = this._findHost();
