@@ -1,13 +1,22 @@
 'use strict';
 
 const EMBER_VERSION_WITH_JQUERY_DEPRECATION = '3.9.0-alpha.1';
+const EMBER_VERSION_WITHOUT_JQUERY_SUPPORT = '4.0.0-alpha.1';
 
 module.exports = {
   name: require('./package').name,
-  included() {
-    this._super.included.apply(this, arguments);
+
+  init() {
+    this._super.init.apply(this, arguments);
 
     const VersionChecker = require('ember-cli-version-checker');
+
+    let checker = new VersionChecker(this);
+    this._ember = checker.forEmber();
+  },
+
+  included() {
+    this._super.included.apply(this, arguments);
 
     let app = this._findHost();
     let optionalFeatures = app.project.findAddonByName("@ember/optional-features");
@@ -18,15 +27,24 @@ module.exports = {
 
     app.import('vendor/shims/jquery.js');
 
-    let checker = new VersionChecker(this);
-    let ember = checker.forEmber();
-
-    if (ember.gte(EMBER_VERSION_WITH_JQUERY_DEPRECATION)) {
+    if (this._ember.gte(EMBER_VERSION_WITH_JQUERY_DEPRECATION)) {
       app.import('vendor/jquery/component.dollar.js');
     }
 
     if (optionalFeatures && !optionalFeatures.isFeatureEnabled('jquery-integration')) {
       app.project.ui.writeDeprecateLine('You have disabled the `jquery-integration` optional feature. You now have to delete `@ember/jquery` from your package.json');
+    }
+  },
+
+  treeForAddon() {
+    if (this._ember.gte(EMBER_VERSION_WITHOUT_JQUERY_SUPPORT)) {
+      return this._super.treeForAddon.apply(this, arguments);
+    }
+  },
+
+  treeForApp() {
+    if (this._ember.gte(EMBER_VERSION_WITHOUT_JQUERY_SUPPORT)) {
+      return this._super.treeForApp.apply(this, arguments);
     }
   },
 
