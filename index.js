@@ -11,12 +11,15 @@ module.exports = {
       app.import('vendor/jquery/jquery.js', { prepend: true });
     }
 
+    app.import('vendor/shims/jquery.js');
+
     if (optionalFeatures && !optionalFeatures.isFeatureEnabled('jquery-integration')) {
       app.project.ui.writeDeprecateLine('You have disabled the `jquery-integration` optional feature. You now have to delete `@ember/jquery` from your package.json');
     }
   },
 
-  treeForVendor: function() {
+  treeForVendor: function(tree) {
+    const BroccoliMergeTrees = require('broccoli-merge-trees');
     const Funnel = require('broccoli-funnel');
     const resolve = require('resolve');
     const path = require('path');
@@ -35,6 +38,6 @@ module.exports = {
       files: ['jquery.js'],
     });
 
-    return jquery;
+    return new BroccoliMergeTrees([jquery, tree]);
   },
 };
