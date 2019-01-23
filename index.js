@@ -1,6 +1,6 @@
 'use strict';
 
-const EMBER_VERSION_WITH_JQUERY_DEPRECATION = '3.9.0-canary';
+const EMBER_VERSION_WITH_JQUERY_DEPRECATION = '3.9.0-alpha.1';
 
 module.exports = {
   name: require('./package').name,
@@ -50,6 +50,13 @@ module.exports = {
       files: ['jquery.js'],
     });
 
-    return new BroccoliMergeTrees([jquery, tree]);
+    let babelAddon = this.project.findAddonByName('ember-cli-babel');
+    let transpiledTree = babelAddon.transpileTree(tree, {
+      'ember-cli-babel': {
+        compileModules: false
+      }
+    });
+
+    return new BroccoliMergeTrees([jquery, transpiledTree]);
   },
 };
