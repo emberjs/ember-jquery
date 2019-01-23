@@ -1,10 +1,6 @@
-import Component from '@ember/component';
-import jQuery from 'jquery';
-import { assert } from '@ember/debug';
-
-Component.reopen({
+Ember.Component.reopen({
   $(sel) {
-    assert(
+    Ember.assert(
       "You cannot access this.$() on a component with `tagName: ''` specified.",
       this.tagName !== ''
     );

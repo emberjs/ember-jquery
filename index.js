@@ -1,6 +1,6 @@
 'use strict';
 
-const EMBER_VERSION_WITH_JQUERY_DEPRECATION = '3.9.0'; // @todo replace with real version
+const EMBER_VERSION_WITH_JQUERY_DEPRECATION = '3.9.0-canary';
 
 module.exports = {
   name: require('./package').name,
@@ -50,12 +50,6 @@ module.exports = {
       files: ['jquery.js'],
     });
 
-    let babelAddon = this.project.findAddonByName('ember-cli-babel');
-    let es6Tree = new Funnel(path.join(__dirname, 'vendor/jquery'), {
-      destDir: 'jquery',
-    });
-    let transpiledTree = babelAddon.transpileTree(es6Tree);
-
-    return new BroccoliMergeTrees([jquery, tree, transpiledTree], { overwrite: true });
+    return new BroccoliMergeTrees([jquery, tree]);
   },
 };
