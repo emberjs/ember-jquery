@@ -3,7 +3,7 @@
     'use strict';
 
     return {
-      'default': self['jquery'],
+      'default': self['jQuery'],
       __esModule: true,
     };
   }
