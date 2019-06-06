@@ -1,3 +1,11 @@
+## v0.6.1 (2019-06-06)
+
+#### :bug: Bug Fix
+* [#76](https://github.com/emberjs/ember-jquery/pull/76) Bump jquery from 3.4.0 to 3.4.1 ([@dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
+#### Committers: 1
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
 ## v0.6.0 (2019-01-25)
 
 #### :boom: Breaking Change
