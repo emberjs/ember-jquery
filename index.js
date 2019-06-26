@@ -16,8 +16,6 @@ module.exports = {
       app.import('vendor/jquery/jquery.js', { prepend: true });
     }
 
-    app.import('vendor/shims/jquery.js');
-
     let checker = new VersionChecker(this);
     let ember = checker.forEmber();
 
@@ -27,6 +25,14 @@ module.exports = {
 
     if (optionalFeatures && !optionalFeatures.isFeatureEnabled('jquery-integration')) {
       app.project.ui.writeDeprecateLine('You have disabled the `jquery-integration` optional feature. You now have to delete `@ember/jquery` from your package.json');
+    }
+
+    const appConfig = app.project.config(app.env)['ember-jquery'] || {};
+
+    if (appConfig.moduleFormat === 'amd') {
+      app.import('vendor/shims/jquery-amd.js');
+    } else {
+      app.import('vendor/shims/jquery.js');
     }
   },
 
