@@ -28,6 +28,12 @@ ember install @ember/optional-features
 ember feature:enable jquery-integration
 ``` 
 
+Usage
+------------------------------------------------------------------------------
+
+import jQuery from 'jquery'
+const element = jQuery('#special');
+
 Contributing
 ------------------------------------------------------------------------------
 
