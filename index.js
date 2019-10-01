@@ -10,24 +10,23 @@ module.exports = {
     const VersionChecker = require('ember-cli-version-checker');
 
     let app = this._findHost();
-    let optionalFeatures = app.project.findAddonByName("@ember/optional-features");
-
+    
     if (!app.vendorFiles || !app.vendorFiles['jquery.js']) {
       app.import('vendor/jquery/jquery.js', { prepend: true });
     }
 
     app.import('vendor/shims/jquery.js');
 
+    let optionalFeatures = app.project.findAddonByName("@ember/optional-features");
+    let integrationTurnedOff = optionalFeatures && !optionalFeatures.isFeatureEnabled('jquery-integration');
+
     let checker = new VersionChecker(this);
     let ember = checker.forEmber();
-
-    if (ember.gte(EMBER_VERSION_WITH_JQUERY_DEPRECATION)) {
+    
+    if (ember.gte(EMBER_VERSION_WITH_JQUERY_DEPRECATION) && !integrationTurnedOff) {
       app.import('vendor/jquery/component.dollar.js');
     }
 
-    if (optionalFeatures && !optionalFeatures.isFeatureEnabled('jquery-integration')) {
-      app.project.ui.writeDeprecateLine('You have disabled the `jquery-integration` optional feature. You now have to delete `@ember/jquery` from your package.json');
-    }
   },
 
   treeForVendor: function(tree) {
