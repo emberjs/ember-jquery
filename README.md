@@ -34,8 +34,10 @@ ember feature:enable jquery-integration
 Usage
 ------------------------------------------------------------------------------
 
+```js
 import jQuery from 'jquery'
 const element = jQuery('#special');
+```
 
 Contributing
 ------------------------------------------------------------------------------
