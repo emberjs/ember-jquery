@@ -1,3 +1,20 @@
+## v1.0.0 (2019-10-02)
+
+#### :boom: Breaking Change
+* [#100](https://github.com/emberjs/ember-jquery/pull/100) ember-cli-update to 3.10, drop node 6 ([@simonihmig](https://github.com/simonihmig))
+
+#### :rocket: Enhancement
+* [#148](https://github.com/emberjs/ember-jquery/pull/148) Allow addon to provide jQuery to final build, but not include Ember <-> jQuery integration. ([@lupestro](https://github.com/lupestro))
+
+#### :memo: Documentation
+* [#145](https://github.com/emberjs/ember-jquery/pull/145) Add directions to import and use jQuery ([@jrjohnson](https://github.com/jrjohnson))
+
+#### Committers: 4
+- Jonathan Johnson ([@jrjohnson](https://github.com/jrjohnson))
+- Ralph Mack ([@lupestro](https://github.com/lupestro))
+- Simon Ihmig ([@simonihmig](https://github.com/simonihmig))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
 ## v0.6.1 (2019-06-06)
 
 #### :bug: Bug Fix
