@@ -1,3 +1,13 @@
+## v1.1.0 (2019-10-04)
+
+#### :rocket: Enhancement
+* [#153](https://github.com/emberjs/ember-jquery/pull/153) Add missing deprecation message for `this.$()` ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 3
+- Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
 ## v1.0.0 (2019-10-02)
 
 #### :boom: Breaking Change
