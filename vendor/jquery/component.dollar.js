@@ -1,7 +1,8 @@
 import { assert, deprecate } from '@ember/debug';
+import Component from '@ember/component';
 
 (function() {
-  Ember.Component.reopen({
+  Component.reopen({
     $(sel) {
       assert(
         "You cannot access this.$() on a component with `tagName: ''` specified.",
@@ -13,8 +14,10 @@ import { assert, deprecate } from '@ember/debug';
         false,
         {
           id: 'ember-views.curly-components.jquery-element',
+          since: '3.4.0',
           until: '4.0.0',
           url: 'https://emberjs.com/deprecations/v3.x#toc_jquery-apis',
+          for: 'ember-source',
         }
       );
 
