@@ -2,6 +2,7 @@
 
 module.exports = {
   root: true,
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -18,7 +19,11 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'ember/no-jquery': 'off',
+    'ember/no-classic-components': 'off',
+    'ember/require-tagless-components': 'off',
+  },
   overrides: [
     // node files
     {
