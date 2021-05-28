@@ -10,7 +10,7 @@ module.exports = {
     const VersionChecker = require('ember-cli-version-checker');
 
     let app = this._findHost();
-    
+
     if (!app.vendorFiles || !app.vendorFiles['jquery.js']) {
       app.import('vendor/jquery/jquery.js', { prepend: true });
     }
@@ -22,7 +22,7 @@ module.exports = {
 
     let checker = new VersionChecker(this);
     let ember = checker.forEmber();
-    
+
     if (ember.gte(EMBER_VERSION_WITH_JQUERY_DEPRECATION) && !integrationTurnedOff) {
       app.import('vendor/jquery/component.dollar.js');
     }

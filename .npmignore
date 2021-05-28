@@ -9,9 +9,14 @@
 /.bowerrc
 /.editorconfig
 /.ember-cli
+/.env*
+/.eslintcache
 /.eslintignore
 /.eslintrc.js
+/.git/
 /.gitignore
+/.prettierignore
+/.prettierrc.js
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
