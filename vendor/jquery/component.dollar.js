@@ -1,8 +1,14 @@
 import { assert, deprecate } from '@ember/debug';
+import EmberObject from '@ember/object';
 import Component from '@ember/component';
 
 (function() {
-  Component.reopen({
+  /*
+   * This non-standard use of `reopen` and `call` allows the component
+   * base class to be reopened without triggering the
+   * ember.component.reopen deprecation in Ember itself.
+   */
+  EmberObject.reopen.call(Component, {
     $(sel) {
       assert(
         "You cannot access this.$() on a component with `tagName: ''` specified.",
