@@ -154,7 +154,8 @@ jobs:
           ember-beta,
           ember-canary,
           ember-release-with-jquery,
-          ember-release-classic
+          ember-release-classic,
+          embroider-safe
         ]
         allow-failure: [false]
         include:
