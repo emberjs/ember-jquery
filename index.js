@@ -1,13 +1,9 @@
 'use strict';
 
-const EMBER_VERSION_WITH_JQUERY_DEPRECATION = '3.9.0-alpha.1';
-
 module.exports = {
   name: require('./package').name,
   included() {
     this._super.included.apply(this, arguments);
-
-    const VersionChecker = require('ember-cli-version-checker');
 
     let app = this._findHost();
 
@@ -24,13 +20,7 @@ module.exports = {
       optionalFeatures &&
       !optionalFeatures.isFeatureEnabled('jquery-integration');
 
-    let checker = new VersionChecker(this);
-    let ember = checker.forEmber();
-
-    if (
-      ember.gte(EMBER_VERSION_WITH_JQUERY_DEPRECATION) &&
-      !integrationTurnedOff
-    ) {
+    if (!integrationTurnedOff) {
       app.import('vendor/jquery/component.dollar.js');
     }
   },
