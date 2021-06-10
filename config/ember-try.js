@@ -12,7 +12,7 @@ module.exports = function() {
       useYarn: true,
       scenarios: [
         {
-          name: 'ember-lts-2.16',
+          name: 'ember-lts-2.16-with-jquery',
           env: {
             EMBER_OPTIONAL_FEATURES: JSON.stringify({ 'jquery-integration': true })
           },
@@ -23,7 +23,7 @@ module.exports = function() {
           }
         },
         {
-          name: 'ember-lts-2.18',
+          name: 'ember-lts-2.18-with-jquery',
           env: {
             EMBER_OPTIONAL_FEATURES: JSON.stringify({ 'jquery-integration': true })
           },
@@ -42,18 +42,26 @@ module.exports = function() {
           }
         },
         {
-          name: 'ember-lts-3.8',
+          name: 'ember-lts-3.16',
           npm: {
             devDependencies: {
-              'ember-source': '~3.8.0'
+              'ember-source': '~3.16.0'
             }
           }
         },
         {
-          name: 'ember-lts-3.12',
+          name: 'ember-lts-3.20',
           npm: {
             devDependencies: {
-              'ember-source': '~3.12.0'
+              'ember-source': '~3.20.0'
+            }
+          }
+        },
+        {
+          name: 'ember-lts-3.24',
+          npm: {
+            devDependencies: {
+              'ember-source': '~3.24.0'
             }
           }
         },
@@ -90,7 +98,38 @@ module.exports = function() {
           npm: {
             devDependencies: {}
           }
-        }
+        },
+        {
+          name: 'ember-release-with-jquery',
+          env: {
+            EMBER_OPTIONAL_FEATURES: JSON.stringify({
+              'jquery-integration': true,
+            }),
+          },
+          npm: {
+            devDependencies: {
+              'ember-source': urls[0],
+            },
+          },
+        },
+        {
+          name: 'ember-release-classic',
+          env: {
+            EMBER_OPTIONAL_FEATURES: JSON.stringify({
+              'application-template-wrapper': true,
+              'default-async-observers': false,
+              'template-only-glimmer-components': false,
+            }),
+          },
+          npm: {
+            devDependencies: {
+              'ember-source': urls[0],
+            },
+            ember: {
+              edition: 'classic',
+            },
+          },
+        },
       ]
     };
   });
