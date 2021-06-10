@@ -4359,6 +4359,13 @@ ember-source-channel-url@^2.0.1:
   dependencies:
     got "^8.0.1"
 
+ember-source-channel-url@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ember-source-channel-url/-/ember-source-channel-url-3.0.0.tgz#bcd5be72c63fa0b8c390b3121783b462063e2a1b"
+  integrity sha512-vF/8BraOc66ZxIDo3VuNP7iiDrnXEINclJgSJmqwAAEpg84Zb1DHPI22XTXSDA+E8fW5btPUxu65c3ZXi8AQFA==
+  dependencies:
+    node-fetch "^2.6.0"
+
 ember-source@~3.19.0:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.19.0.tgz#ea156953d177374baf4911eb95d73625c7f8cbbb"
@@ -7461,7 +7468,7 @@ node-fetch-npm@^2.0.2:
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
 
-node-fetch@^2.6.1:
+node-fetch@^2.6.0, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
