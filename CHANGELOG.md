@@ -1,5 +1,32 @@
 # Changelog
 
+## v2.0.0 (2021-06-10)
+
+#### :boom: Breaking Change
+* [#342](https://github.com/emberjs/ember-jquery/pull/342) Drop support for Node 10, 13, and 15. ([@rwjblue](https://github.com/rwjblue))
+* [#266](https://github.com/emberjs/ember-jquery/pull/266) Drop support for Node 8 ([@Turbo87](https://github.com/Turbo87))
+
+#### :rocket: Enhancement
+* [#347](https://github.com/emberjs/ember-jquery/pull/347) Include `Ember.Component.prototype.$` deprecation regardless of Ember version ([@rwjblue](https://github.com/rwjblue))
+
+#### :bug: Bug Fix
+* [#345](https://github.com/emberjs/ember-jquery/pull/345) Update ember-cli-babel to latest for Ember 3.27 compatibility ([@rwjblue](https://github.com/rwjblue))
+* [#326](https://github.com/emberjs/ember-jquery/pull/326) Avoid triggering Component reopen deprecation ([@mixonic](https://github.com/mixonic))
+* [#321](https://github.com/emberjs/ember-jquery/pull/321) Remove reference to global Ember API ([@mixonic](https://github.com/mixonic))
+
+#### :house: Internal
+* [#344](https://github.com/emberjs/ember-jquery/pull/344) Update broccoli based dependencies to latest ([@rwjblue](https://github.com/rwjblue))
+* [#343](https://github.com/emberjs/ember-jquery/pull/343) Update release setup ([@rwjblue](https://github.com/rwjblue))
+* [#331](https://github.com/emberjs/ember-jquery/pull/331) Bump several dev dependencies, Ember CLI 3.26.1 ([@mixonic](https://github.com/mixonic))
+* [#327](https://github.com/emberjs/ember-jquery/pull/327) Move CI over to GH Actions ([@mixonic](https://github.com/mixonic))
+
+#### Committers: 4
+- Matthew Beale ([@mixonic](https://github.com/mixonic))
+- Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
+
 ## v1.1.0 (2019-10-04)
 
 #### :rocket: Enhancement
