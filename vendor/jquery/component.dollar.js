@@ -1,6 +1,7 @@
 import { assert, deprecate } from '@ember/debug';
 import EmberObject from '@ember/object';
 import Component from '@ember/component';
+import jQuery from 'jquery';
 
 (function() {
   /*
